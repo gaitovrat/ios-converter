@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[self amountTextFIeld] setKeyboardType:UIKeyboardTypeNumberPad];
 }
 
 - (IBAction)getConvertValue:(id)sender {
