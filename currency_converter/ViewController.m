@@ -22,6 +22,8 @@
 }
 
 - (IBAction)getConvertValue:(id)sender {
+    [CurrencyService convert:[[self currencyTextField] text] to:[[self amountTextFIeld] text]];
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Convert" message:@"Hello world" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];

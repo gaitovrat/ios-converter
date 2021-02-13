@@ -16,6 +16,7 @@
 		A0A1E32925D81D0900967A46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A1E32825D81D0900967A46 /* main.m */; };
 		A0A1E33325D81D0900967A46 /* currency_converterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A1E33225D81D0900967A46 /* currency_converterTests.m */; };
 		A0A1E33E25D81D0900967A46 /* currency_converterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A1E33D25D81D0900967A46 /* currency_converterUITests.m */; };
+		A0A7583725D8730C0087FDEA /* CurrencyService.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A7583625D8730C0087FDEA /* CurrencyService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		A0A1E33925D81D0900967A46 /* currency_converterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = currency_converterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A1E33D25D81D0900967A46 /* currency_converterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = currency_converterUITests.m; sourceTree = "<group>"; };
 		A0A1E33F25D81D0900967A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0A7583525D872E50087FDEA /* CurrencyService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrencyService.h; sourceTree = "<group>"; };
+		A0A7583625D8730C0087FDEA /* CurrencyService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrencyService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 		A0A1E31525D81D0400967A46 /* currency_converter */ = {
 			isa = PBXGroup;
 			children = (
+				A0A7581A25D871840087FDEA /* service */,
 				A0A1E31625D81D0400967A46 /* AppDelegate.h */,
 				A0A1E31725D81D0400967A46 /* AppDelegate.m */,
 				A0A1E31925D81D0400967A46 /* SceneDelegate.h */,
@@ -135,6 +139,15 @@
 				A0A1E33F25D81D0900967A46 /* Info.plist */,
 			);
 			path = currency_converterUITests;
+			sourceTree = "<group>";
+		};
+		A0A7581A25D871840087FDEA /* service */ = {
+			isa = PBXGroup;
+			children = (
+				A0A7583525D872E50087FDEA /* CurrencyService.h */,
+				A0A7583625D8730C0087FDEA /* CurrencyService.m */,
+			);
+			path = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +283,7 @@
 				A0A1E31825D81D0400967A46 /* AppDelegate.m in Sources */,
 				A0A1E32925D81D0900967A46 /* main.m in Sources */,
 				A0A1E31B25D81D0400967A46 /* SceneDelegate.m in Sources */,
+				A0A7583725D8730C0087FDEA /* CurrencyService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
