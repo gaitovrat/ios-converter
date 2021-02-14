@@ -8,8 +8,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *currencyTextField;
-@property (weak, nonatomic) IBOutlet UITextField *amountTextFIeld;
 @end
 
 @implementation ViewController
@@ -30,6 +28,4 @@
         [self presentViewController:alert animated:true completion:nil];
     }];
 }
-
-
 @end

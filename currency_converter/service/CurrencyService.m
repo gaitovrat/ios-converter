@@ -9,6 +9,7 @@
 
 @implementation CurrencyService
 + (void)convert:(NSString *)currency to:(NSString *)amount completionHandler:(void (^)(NSData *data))completion {
+    
     NSString *urlString = [NSString stringWithFormat:@"https://habr.com/ru/post/225079/"];
     NSURL *url = [NSURL URLWithString:urlString];
         

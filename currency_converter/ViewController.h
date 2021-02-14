@@ -9,7 +9,7 @@
 #import "service/CurrencyService.h"
 
 @interface ViewController : UIViewController
-
-
+@property (weak, nonatomic) IBOutlet UITextField *currencyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *amountTextFIeld;
 @end
 
