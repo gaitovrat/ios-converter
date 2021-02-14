@@ -8,13 +8,14 @@
 #import "CurrencyService.h"
 
 @implementation CurrencyService
-+ (instancetype)initWithCurrency:(NSString *)currency amount:(NSNumber *)amount {
-    CurrencyService* service = [[CurrencyService alloc] init];
-    if(service) {
-        [service setCurrency:currency];
-        [service setAmount:amount];
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self setCurrency:@""];
+        [self setAmount:[NSNumber numberWithFloat:0]];
     }
-    return service;
+    return self;
 }
 
 - (void)convertWithComplition:(void (^)(NSData *))completion onFailure:(void (^)(NSError *))failure {

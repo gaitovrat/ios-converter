@@ -16,7 +16,7 @@
     // Do any additional setup after loading the view.
     [[self amountTextFIeld] setKeyboardType:UIKeyboardTypeNumberPad];
     
-    CurrencyService* service = [CurrencyService initWithCurrency:@"" amount:[NSNumber numberWithFloat:0]];
+    CurrencyService* service = [[CurrencyService alloc] init];
     [self setService:service];
 }
 

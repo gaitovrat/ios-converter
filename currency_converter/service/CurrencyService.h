@@ -12,9 +12,7 @@
 
 @interface CurrencyService : NSObject
 @property NSString *currency;
-@property NSNumber *amount;;
-
-+ (instancetype)initWithCurrency:(NSString *)currency amount:(NSNumber *)amount;
+@property NSNumber *amount;
 
 - (void)convertWithComplition:(void (^)(NSData *data))completion onFailure:(void (^)(NSError *error))failure;
 @end
