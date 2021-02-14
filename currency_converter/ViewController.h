@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *currencyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextFIeld;
+@property CurrencyService *service;
 @end
 

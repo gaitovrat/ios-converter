@@ -15,17 +15,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [[self amountTextFIeld] setKeyboardType:UIKeyboardTypeNumberPad];
+    
+    CurrencyService* service = [CurrencyService initWithCurrency:@"" amount:[NSNumber numberWithFloat:0]];
+    [self setService:service];
 }
 
 - (IBAction)getConvertValue:(id)sender {
-    [CurrencyService convert:[[self currencyTextField] text] to:[[self currencyTextField] text] completionHandler:^(NSData *data) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Convert" message:@"Hello world" preferredStyle:UIAlertControllerStyleAlert];
+    NSNumber *amount = [self getFloatFromAmount];
+    NSString *currency = [self getTextFromCurrency];
+    
+    if([amount floatValue] > 0 && ![currency isEqual:@""]) {
+        [[self service] setAmount:amount];
+        [[self service] setCurrency:currency];
         
-        UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
-        
-        [alert addAction:action];
-        
-        [self presentViewController:alert animated:true completion:nil];
-    }];
+        [[self service] convertWithComplition:^(NSData *data) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Convert" message:@"Hello world" preferredStyle:UIAlertControllerStyleAlert];
+    
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    
+            [alert addAction:action];
+    
+            [self presentViewController:alert animated:true completion:nil];
+        } onFailure:^(NSError *error) {}];
+    }
+}
+
+- (NSNumber*)getFloatFromAmount {
+    return [NSNumber numberWithFloat:[[[self amountTextFIeld] text] floatValue]];
+}
+
+- (NSString*)getTextFromCurrency {
+    return [[self currencyTextField] text];
 }
 @end
