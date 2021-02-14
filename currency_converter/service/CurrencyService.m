@@ -8,7 +8,29 @@
 #import "CurrencyService.h"
 
 @implementation CurrencyService
-+ (void)convert:(NSString *)currency to:(NSString *)amount {
-    NSLog(@"%@ %@\n", currency, amount);
++ (void)convert:(NSString *)currency to:(NSString *)amount completionHandler:(void (^)(NSData *data))completion {
+    NSString *urlString = [NSString stringWithFormat:@"https://habr.com/ru/post/225079/"];
+    NSURL *url = [NSURL URLWithString:urlString];
+        
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error) {
+            NSLog(@"error: %@\n", error);
+            return;
+        }
+        
+        if(response) {
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+            if([httpResponse statusCode] == 200 && data) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(data);
+                });
+            }
+        }
+    }];
+    
+    [task resume];
 }
 @end

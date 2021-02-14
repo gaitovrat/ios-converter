@@ -11,7 +11,7 @@
 #include <Foundation/Foundation.h>
 
 @interface CurrencyService : NSObject
-+ (void)convert:(NSString*)currency to:(NSString*)amount;
++ (void)convert:(NSString *)currency to:(NSString *)amount completionHandler:(void (^)(NSData *data))completion;
 @end
 
 #endif /* CurrencyConverter_h */
